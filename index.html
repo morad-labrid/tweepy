@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles/css/style.css">
+	<title>Tweepy</title>
+</head>
+<body>
+	<main>
+		<!-- Url scrape -->
+		<section></section>
+		<!-- Viewing -->
+		<section id="viewing" class="viewing color-palette-1">
+			<div id="glass" class="glass-effect">
+				<div class="user"><div></div><p>Friendly Bob</p></div>
+				<p class="tweet">Capture and share Twitter posts as beautiful images. Get started by pasting a tweet URL into the input above.</p>
+				<p class="date">11:57 AM . 29 Nov, 2022</p>
+				<div class="interaction">
+					<p>4.1K <span>replies</span></p>
+					<p>267 <span>shares</span></p>
+					<p>7.3K <span>likes</span></p>
+				</div>
+			</div>
+		</section>
+		<!-- Settings -->
+		<section class="settings">
+				<div class="setting color-container">
+					<div id="color-palettes" class="color-palette-1"></div>
+					<p>Color</p>
+					<div class="colors">
+						<div class="new-color">
+							<!-- <p>+</p> -->
+							<!-- <p class="validate">ok</p> -->
+							<input onchange="changeViewColorPerso()" type="color" name="" id="first-color">
+							<input onchange="changeViewColorPerso()" type="color" name="" id="second-color">
+						</div>
+						<div onclick="changeViewColor('color-palette-1')" class="color-palette-1"></div>
+						<div onclick="changeViewColor('color-palette-2')" class="color-palette-2"></div>
+						<div onclick="changeViewColor('color-palette-3')" class="color-palette-3"></div>
+						<div onclick="changeViewColor('color-palette-4')" class="color-palette-4"></div>
+						<div onclick="changeViewColor('color-palette-5')" class="color-palette-5"></div>
+						<div onclick="changeViewColor('color-palette-6')" class="color-palette-6"></div>
+						<div onclick="changeViewColor('color-palette-7')" class="color-palette-7"></div>
+						<div onclick="changeViewColor('color-palette-8')" class="color-palette-8"></div>
+						<div onclick="changeViewColor('color-palette-9')" class="color-palette-9"></div>
+						<div onclick="changeViewColor('color-palette-10')" class="color-palette-10"></div>
+					</div>
+				</div>
+				<div class="setting" onclick="darkmode()"><img class="moon" src="styles/img/moon.svg" alt=""><p>Card</p></div>
+				<div class="setting" onclick="showresponse()"><img class="heart" src="styles/img/heart.svg" alt=""><p>Response</p></div>
+				<div class="setting" onclick="showuser()"><img class="user-icon" src="styles/img/user-check.svg" alt=""><p>Identity</p></div>
+				<div class="vertical-line"></div>
+				<div class="setting"><img src="styles/img/copy.svg" alt=""><p>Copy</p></div>
+				<div class="setting"><img src="styles/img/download.svg" alt=""><p>Download</p></div>
+		</section>
+	</main>
+	<!-- Javascript -->
+	<script src="javascript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: monospace; */
+    font-family: "Poppins", sans-serif;
+    color: #202020;
+}
+
+body {
+    height: 100vh;
+    background-color: #d0d5e1;
+}
+
+#viewing {
+    width: 425px;
+    margin: auto;
+    padding: 50px;
+    border-radius: 6px;
+
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Shadow effect */
+    box-shadow: 0px 16px 40px 4px rgba(0, 0, 0, 0.2);
+}
+
+.glass-effect {
+    /* Glass effect */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.9) 30%,
+            rgba(255, 255, 255, 0.3) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    padding: 24px;
+    padding-bottom: 16px;
+    height: 100%;
+
+    /* Shadow effect */
+    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.glass-effect-dark {
+    /* Glass effect */
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.9) 30%,
+            rgba(0, 0, 0, 0.4) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+    padding: 24px;
+    padding-bottom: 16px;
+    height: 100%;
+    /* Shadow effect */
+    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect-dark .tweet,
+.glass-effect-dark .interaction p,
+.glass-effect-dark .user p {
+    color: white;
+}
+
+.glass-effect-dark .date,
+.glass-effect-dark .interaction span {
+    color: rgb(170, 170,
+            170);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: large;
+    height: 40px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all;
+    transition: 0.6s;
+}
+
+.user div {
+    background-image: url("../img/sticker.png");
+    background-color: rgb(255, 187, 105);
+    background-size: 46px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-right: 12px;
+}
+
+.tweet {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.date {
+    color: gray;
+    font-size: small;
+    font-weight: 300;
+}
+
+.interaction {
+    display: flex;
+    font-size: small;
+    font-weight: 500;
+    transition: all;
+    transition: 0.6s;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.interaction span {
+    color: gray;
+    font-weight: 300;
+}
+
+.hide-element {
+    transition: all;
+    transition: 0.2s;
+    height: 0px;
+    overflow: hidden;
+    display: none;
+}
+
+.interaction p {
+    margin-right: 10px;
+}
+
+/* Color Setings */
+#color-palettes {
+    width: 26px;
+    height: 26px;
+    border-radius: 50px;
+    border: 2px solid white;
+    /* Shadow effect */
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+}
+
+.settings img {
+    width: 26px;
+    height: auto;
+    transition: all;
+    transition: 0.2s;
+}
+
+.setting:active img {
+    width: 24px;
+    margin: 2px;
+    margin-top: 0;
+}
+
+.settings {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border-radius: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* margin: 10px; */
+
+    position: absolute;
+    top: 47%;
+    left: 1%;
+    transform: translate(0, -50%);
+}
+
+.setting {
+    width: 68px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    cursor: pointer;
+    transition: all;
+    transition: 0.2s;
+}
+
+.setting:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.settings .setting:nth-child(2) {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.settings p {
+    color: gray;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.vertical-line {
+    background-color: rgba(128, 128, 128, 0.5);
+    height: 1px;
+    width: 50px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.colors {
+    height: 0px;
+    overflow: hidden;
+    transition: all;
+    transition: 0.6s;
+}
+
+.color-container:hover .colors {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.colors::-webkit-scrollbar {
+    display: none;
+}
+
+.colors div {
+    width: 38px;
+    height: 38px;
+    margin: 4px;
+    border-radius: 4px;
+    border: 2px solid white;
+    /* Shadow effect */
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.15);
+    transition: all;
+    transition: 0.2s;
+}
+
+.colors div:hover {
+    /* border: 2px solid rgb(187, 187, 187); */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.colors .new-color {
+
+    border-radius: none;
+    border: none;
+    box-shadow: none;
+    background-color: #d0d5e1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+}
+
+.new-color p {
+    color: #a6b4d5;
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.new-color .validate {
+    font-size: 16px;
+    display: none;
+}
+
+.new-color input {
+    -webkit-appearance: none;
+    padding: 0;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.new-color input::-webkit-color-swatch {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.new-color input::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.new-color:hover p {
+    color: #f0f0f0;
+}
+
+.colors .new-color:hover {
+    background-color: #c5cad6;
+    box-shadow: none;
+}
+
+.color-palette-1 {
+    background: linear-gradient(135deg,
+            rgba(255, 220, 198, 1) 0%,
+            rgb(239, 174, 205) 40%,
+            rgb(194, 220, 255) 85%,
+            rgba(212, 230, 253, 1) 100%);
+
+}
+
+.color-palette-2 {
+    background: linear-gradient(135deg,
+            #392d69 0%,
+            #b57bee 100%);
+}
+
+.color-palette-3 {
+    background: linear-gradient(135deg,
+            #f55c7a 0%,
+            #f6bc66 100%);
+}
+
+.color-palette-4 {
+    background: linear-gradient(135deg,
+            #211f2f 0%,
+            #918ca9 100%);
+}
+
+.color-palette-5 {
+    background: linear-gradient(135deg,
+            #0c0c0c 0%,
+            #0f971c 100%);
+}
+
+.color-palette-6 {
+    background: linear-gradient(135deg,
+            #fc4778 0%,
+            #3952f5 100%);
+}
+
+.color-palette-7 {
+    background: linear-gradient(135deg,
+            #f5c900 0%,
+            #183182 100%);
+}
+
+.color-palette-8 {
+    background: linear-gradient(135deg,
+            #82f4b1 0%,
+            #30c67c 100%);
+}
+
+.color-palette-9 {
+    background: linear-gradient(135deg,
+            #42047e 0%,
+            #07f49e 100%);
+}
+
+.color-palette-10 {
+    background: linear-gradient(135deg,
+            #e8bdf9 0%,
+            #d8ded6 100%);
+}
