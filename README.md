@@ -3,7 +3,9 @@
 Tweepy est un petite application qui permet de capturer et de partager des publications Twitter sous forme de belles images, avec des fonds colorés et personnalisables.
 </p>
 
-![picture alt](styles/img/screens/screen-01.png "Title is optional")
+<p align="center">
+<img src="styles/img/screens/video.gif"/>
+</p>
 
 - **importation automatique des tweets :** il suffit de copier-coller l’adresse URL du tweet que vous souhaitez capturer dans la barre de recherche, et l’aperçu de la capture se génère automatiquement au milieu de l’interface.
 - > **Note:** vous pouvez taper un texte librement au milieu de l’interface.
