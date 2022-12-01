@@ -4,6 +4,7 @@ Tweepy est un petite application qui permet de capturer et de partager des publi
 </p>
 
 <p align="center">
+    <img src="styles/img/screens/video-02.gif"/>
     <img src="styles/img/screens/video.gif"/>
 </p>
 
