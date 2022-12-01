@@ -1,6 +1,6 @@
 <h1 align="center"><u>Tweepy</u></h1>
 <p align="center">
-Tweepy est un petite application qui permet de capturer et de partager des publications Twitter sous forme de belles images, avec des fonds colorés et personnalisables.
+Tweepy est une petite application qui permet de capturer et de partager des publications Twitter sous forme de belles images, avec des fonds colorés et personnalisables.
 </p>
 
 <p align="center">
