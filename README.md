@@ -4,7 +4,7 @@ Tweepy est un petite application qui permet de capturer et de partager des publi
 </p>
 
 <p align="center">
-<img src="styles/img/screens/video.gif"/>
+    <img src="styles/img/screens/video.gif"/>
 </p>
 
 - **importation automatique des tweets :** il suffit de copier-coller l’adresse URL du tweet que vous souhaitez capturer dans la barre de recherche, et l’aperçu de la capture se génère automatiquement au milieu de l’interface.
