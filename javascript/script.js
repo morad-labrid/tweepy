@@ -28,7 +28,7 @@ function showresponse() {
 
 function showuser() {
   user.hasClass("fake-hide-element")
-    ? user.css({ height: "40px", "margin-bottom": "16px" }) &
+    ? user.css({ height: "44px", "margin-bottom": "16px" }) &
       $(".user-icon").attr("src", "styles/img/user-check.svg") &
       user.removeClass("fake-hide-element")
     : user.css({ height: "0px", "margin-bottom": "0px" }) &
@@ -57,21 +57,121 @@ function changeViewColorPerso() {
   });
 }
 
-autosize();
-function autosize() {
-  var text = $(".autosize");
+function getTweet() {
+  var tmplink = $(".search").val();
+  var tweet_id = /[^/]*$/.exec(tmplink)[0];
+  var link =
+    "https://api.twitter.com/2/tweets/" +
+    tweet_id +
+    "?media.fields=url,preview_image_url&tweet.fields=public_metrics,created_at&expansions=author_id,attachments.media_keys&user.fields=profile_image_url";
 
-  text.each(function () {
-    $(this).attr("rows", 1);
-    resize($(this));
+  var settings = {
+    url: "/api/twitter.php",
+    method: "POST",
+    data: { tweet_link: link },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(JSON.parse(response));
+    var tweet = JSON.parse(response).data,
+      replies = kFormatter(
+        JSON.parse(response).data.public_metrics.reply_count
+      ),
+      shares = kFormatter(
+        JSON.parse(response).data.public_metrics.retweet_count +
+          JSON.parse(response).data.public_metrics.quote_count
+      ),
+      likes = kFormatter(JSON.parse(response).data.public_metrics.like_count),
+      user = JSON.parse(response).includes.users[0];
+
+    if (JSON.parse(response).includes.media) {
+      var media = JSON.parse(response).includes.media[0];
+      if (media.type === "photo") {
+        media = JSON.parse(response).includes.media[0].url;
+      }
+      if (media.type === "video") {
+        media = JSON.parse(response).includes.media[0].preview_image_url;
+      }
+      $(".tweet-img").css({
+        "background-image": "url(" + media.replace("_normal", "") + ")",
+        height: "360px",
+      });
+
+      $("#viewing").css({
+        width: "600px",
+      });
+    }
+    $(".tweet").val(tweet.text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, ""));
+    $(".date").text(
+      new Date(tweet.created_at).toLocaleTimeString(navigator.language, {
+        timeStyle: "short",
+      }) +
+        " - " +
+        new Date(tweet.created_at).toLocaleDateString(navigator.language, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        })
+    );
+    $(".user-name").text(user.name);
+    $(".user-image").css(
+      "background-image",
+      "url(" + user.profile_image_url.replace("_normal", "") + ")"
+    );
+    $(".replies").text(replies);
+    $(".shares").text(shares);
+    $(".likes").text(likes);
+
+    changeTextareaSize($("textarea")[0]);
   });
-
-  text.on("input", function () {
-    resize($(this));
-  });
-
-  function resize($text) {
-    $text.css("height", "auto");
-    $text.css("height", $text[0].scrollHeight + "px");
-  }
 }
+
+function kFormatter(num) {
+  var devide = 1;
+  var fixed = 0;
+  var lastDevide = 1;
+  var letter = "";
+
+  if (num >= 1000000000) {
+    devide = 1000000000;
+    lastDevide = 10;
+    fixed = 1;
+    letter = "Md";
+  }
+  if (num >= 999999) {
+    devide = 100000;
+    lastDevide = 10;
+    fixed = 1;
+    letter = "M";
+  }
+  if (num >= 999) {
+    devide = 100;
+    lastDevide = 10;
+    fixed = 1;
+    letter = "K";
+  }
+
+  num = num / devide;
+  num = Math.floor(num);
+  num = num / lastDevide;
+  return parseFloat(num).toFixed(fixed) + letter;
+}
+
+$(document).ready(function () {
+  changeTextareaSize($("textarea")[0]);
+});
+
+function changeTextareaSize(element) {
+  element.style.height = "auto";
+  element.style.height = element.scrollHeight + "px";
+}
+
+$("textarea").on("input", function () {
+  changeTextareaSize($("textarea")[0]);
+});
+
+addEventListener("paste", (event) => {
+  setTimeout(function () {
+    getTweet();
+  }, 1000);
+});
