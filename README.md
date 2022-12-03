@@ -4,7 +4,6 @@ Tweepy est une petite application qui permet de capturer et de partager des publ
 </p>
 
 <p align="center">
-    <img src="styles/img/screens/video-02.gif"/>
     <img src="styles/img/screens/video.gif"/>
 </p>
 
@@ -26,9 +25,9 @@ A --> C(active dark mode)
 A --> D(hide interactions)
 A --> E(hide picture & user name)
 
-B --> Downlaod
-C --> Downlaod
-D --> Downlaod
-E --> Downlaod
-Downlaod --> G(:D)
+B --> Downlaod/Copy
+C --> Downlaod/Copy
+D --> Downlaod/Copy
+E --> Downlaod/Copy
+Downlaod/Copy --> G(:D)
 ```
