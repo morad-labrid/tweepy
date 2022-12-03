@@ -21,7 +21,7 @@ body {
     border-radius: 6px;
 
     position: absolute;
-    top: 47%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* Shadow effect */
@@ -46,6 +46,13 @@ body {
     box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.1);
 
 
+}
+
+.glass-effect .tweet-img,
+.glass-effect-dark .tweet-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .glass-effect-dark {
@@ -82,7 +89,7 @@ body {
     align-items: center;
     font-weight: 500;
     font-size: large;
-    height: 40px;
+    height: 44px;
     margin-bottom: 16px;
     overflow: hidden;
     transition: all;
@@ -92,11 +99,11 @@ body {
 .user div {
     background-image: url("../img/sticker.png");
     background-color: rgb(255, 187, 105);
-    background-size: 46px;
+    background-size: 44px;
     background-position: center;
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50px;
     margin-right: 12px;
 }
@@ -108,7 +115,6 @@ body {
     border: none;
     font-size: 16px;
     resize: none;
-    /* overflow: hidden; */
     width: 100%;
     outline: none;
 }
@@ -143,6 +149,11 @@ body {
 }
 
 .interaction p {
+    margin-right: 2px;
+}
+
+.interaction div {
+    display: flex;
     margin-right: 10px;
 }
 
@@ -181,7 +192,7 @@ body {
     /* margin: 10px; */
 
     position: absolute;
-    top: 47%;
+    top: 50%;
     left: 1%;
     transform: translate(0, -50%);
 }
@@ -373,4 +384,79 @@ body {
     background: linear-gradient(135deg,
             #e8bdf9 0%,
             #d8ded6 100%);
+}
+
+
+/* FORME */
+
+.form {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s;
+    width: 50px;
+    height: 50px;
+    background: #dfe5eb;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+.form input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    /* line-height: 30px; */
+    outline: 0;
+    border: 0;
+    display: none;
+    border-radius: 20px;
+    padding: 0 20px;
+    background-color: #dfe5eb;
+    font-size: small;
+    font-weight: 300;
+}
+
+.form input::placeholder {
+    color: #909090;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: gray;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa:active {
+    font-size: 1em;
+}
+
+.form:hover {
+    width: 300px;
+    cursor: pointer;
+}
+
+.form:hover input {
+    display: block;
+}
+
+.form:hover .fa {
+    background: gray;
+    color: #dfe5eb;
 }
