@@ -94,7 +94,7 @@ function getTweet() {
       }
       $(".tweet-img").css({
         "background-image": "url(" + media.replace("_normal", "") + ")",
-        height: "360px",
+        height: "300px",
       });
 
       $("#viewing").css({

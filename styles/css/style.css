@@ -53,6 +53,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 5px;
 }
 
 .glass-effect-dark {
